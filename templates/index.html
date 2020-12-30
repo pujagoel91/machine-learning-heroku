@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset= "UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="login">
+        <h1>Predict Touch</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="MonthsSinceLastServe" placeholder="Months since last service" required="required" />
+            <br><br>
+            <input type="text" name="InternetFlag" placeholder="Internet Flag" required="required" />
+            <br><br>
+            <input type="text" name="VoiceFlag" placeholder="Voice Flag" required="required" />
+            <br><br>
+            <input type="text" name="VideoCount" placeholder="Video Count" required="required" />
+            <br><br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict Touch</button>
+        </form>
+    <br><br>
+    {{prediction_text}}
+    
+    </div>            
+</body>
+</html>
